@@ -1,0 +1,10 @@
+.{
+    .name = "dep",
+    .version = "0.0.0",
+    .dependencies = .{
+        .@"zig-cbc" = .{
+            .url = "https://github.com/vitalnodo/zig-cbc/archive/b542f2d1761ddd9e9c32e5b9fc0c6b2b294d5890.tar.gz",
+            .hash = "1220f6243d4c36f93c6389c2bc61ef04c545c2d30e39505782486364f7ba9d359d0b",
+        },
+    },
+}
