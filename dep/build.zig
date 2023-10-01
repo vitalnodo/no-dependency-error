@@ -50,6 +50,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     lib.addModule("zig-cbc", zig_cbc_dep.module("zig-cbc"));
+    main_tests.addModule("zig-cbc", zig_cbc_dep.module("zig-cbc"));
     const module = b.addModule(
         "dep",
         .{

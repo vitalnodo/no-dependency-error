@@ -45,13 +45,10 @@ pub fn build(b: *std.Build) void {
     const test_step = b.step("test", "Run library tests");
     test_step.dependOn(&run_main_tests.step);
 
-    const dep = b.anonymousDependency(
-        "dep",
-        @import("dep/build.zig"),
-        .{
-            .target = target,
-            .optimize = optimize,
-        },
-    );
+    const dep = b.dependency("dep", .{
+        .target = target,
+        .optimize = optimize,
+    });
     lib.addModule("dep", dep.module("dep"));
+    main_tests.addModule("dep", dep.module("dep"));
 }
